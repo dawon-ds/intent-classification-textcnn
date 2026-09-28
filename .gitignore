@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.idea/
+.vscode/
+runs/
+*.pth
+*.pt
+*.bin
+data/SNIPS/
+.DS_Store
