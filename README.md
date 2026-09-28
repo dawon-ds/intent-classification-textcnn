@@ -23,7 +23,7 @@ Pretrained variants use **300-dimensional Word2Vec embeddings**. The experiment 
 | CNN-static | 97.71% |
 | CNN-multichannel | **98.14%** |
 
-![Model comparison](results/model_comparison.png)
+![Model comparison](results/model_comparison.svg)
 
 The combined frozen/trainable embedding variant achieved the highest recorded test accuracy in the submitted evaluation report.
 
