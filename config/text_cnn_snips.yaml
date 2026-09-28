@@ -1,0 +1,30 @@
+task: SNIPS
+
+data_files:
+  SNIPS:
+    train_file: "data/SNIPS/train"
+    test_file: "data/SNIPS/test"
+    dev_file: "data/SNIPS/valid"
+
+model: CNN
+# Choose one: rand, static, non-static, multichannel
+model_type: multichannel
+model_params_cnn:
+  filter_lengths: [3, 4, 5]
+  filter_counts: [100, 100, 100]
+
+batch_size: 64
+random_seed: 54321
+embedding_file: "data/GoogleNews-vectors-negative300.bin"
+embedding_dim: 300
+vocab_size: 30000
+use_unk_for_oov: true
+
+dropout_rate: 0.5
+l2_reg_lambda: 1.0e-4
+optimizer: adam
+optimizer_params:
+  adam:
+    lr: 1.0e-3
+
+max_epochs: 100
