@@ -1,0 +1,8 @@
+torch
+numpy
+gensim
+PyYAML
+smart-open
+tensorboard
+scikit-learn
+matplotlib
