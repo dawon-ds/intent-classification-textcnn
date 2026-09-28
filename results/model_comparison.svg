@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420">
+<rect width="100%" height="100%" fill="white"/>
+<text x="410" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="bold">Text CNN Model Comparison</text>
+<text x="410" y="64" text-anchor="middle" font-family="Arial,sans-serif" font-size="13">SNIPS intent classification — test accuracy</text>
+<line x1="95" y1="335" x2="770" y2="335" stroke="#333"/>
+<line x1="95" y1="95" x2="95" y2="335" stroke="#333"/>
+<text x="68" y="340" font-family="Arial,sans-serif" font-size="12">96%</text>
+<text x="68" y="260" font-family="Arial,sans-serif" font-size="12">97%</text>
+<text x="68" y="180" font-family="Arial,sans-serif" font-size="12">98%</text>
+<text x="68" y="100" font-family="Arial,sans-serif" font-size="12">99%</text>
+<line x1="95" y1="255" x2="770" y2="255" stroke="#ddd"/>
+<line x1="95" y1="175" x2="770" y2="175" stroke="#ddd"/>
+<line x1="95" y1="95" x2="770" y2="95" stroke="#ddd"/>
+<rect x="135" y="291" width="110" height="44" fill="#6b7280"/><text x="190" y="282" text-anchor="middle" font-family="Arial" font-size="14">96.55%</text>
+<rect x="295" y="278" width="110" height="57" fill="#6b7280"/><text x="350" y="269" text-anchor="middle" font-family="Arial" font-size="14">96.71%</text>
+<rect x="455" y="198" width="110" height="137" fill="#6b7280"/><text x="510" y="189" text-anchor="middle" font-family="Arial" font-size="14">97.71%</text>
+<rect x="615" y="164" width="110" height="171" fill="#374151"/><text x="670" y="155" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">98.14%</text>
+<text x="190" y="360" text-anchor="middle" font-family="Arial" font-size="12">CNN-rand</text>
+<text x="350" y="360" text-anchor="middle" font-family="Arial" font-size="12">non-static</text>
+<text x="510" y="360" text-anchor="middle" font-family="Arial" font-size="12">static</text>
+<text x="670" y="360" text-anchor="middle" font-family="Arial" font-size="12">multichannel</text>
+</svg>
