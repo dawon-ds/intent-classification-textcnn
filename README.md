@@ -8,7 +8,9 @@ Text CNN experiments for **7-class intent classification on the SNIPS dataset**,
 
 The goal of this project was to examine how the choice of word-embedding strategy affects intent-classification performance. Four variants were evaluated: randomly initialized embeddings, frozen pretrained embeddings, trainable pretrained embeddings, and a combined frozen/trainable embedding variant.
 
-## Embedding Strategies
+## Approach
+
+### Embedding Strategies
 
 | Variant | Initialization | Embedding updates |
 | --- | --- | --- |
@@ -19,7 +21,7 @@ The goal of this project was to examine how the choice of word-embedding strateg
 
 Training builds a vocabulary from the training text, converts sentences to token indices, and pads sequences for convolution. Validation accuracy selects the best checkpoint; a separate evaluation script loads that checkpoint and scores the test split.
 
-## Model
+### Model
 
 The classifier uses convolution filters with window sizes **3, 4, and 5**, with **100 filters per size**, followed by ReLU, max-over-time pooling, dropout, and a fully connected classification layer.
 
@@ -38,9 +40,9 @@ Pretrained variants use **300-dimensional Word2Vec embeddings**. The experiment 
 
 ![Model comparison](results/model_comparison.svg)
 
-The combined frozen/trainable embedding variant achieved the highest recorded test accuracy in the submitted evaluation report, **1.59 percentage points** above CNN-rand. These are historical assignment results; the models have not been retrained in this documentation update.
+The combined frozen/trainable embedding variant achieved the highest recorded test accuracy in the submitted evaluation report, **1.59 percentage points** above CNN-rand.
 
-## Project Structure
+## Repository Structure
 
 ```text
 intent-classification-textcnn/
@@ -63,7 +65,7 @@ intent-classification-textcnn/
 └── requirements.txt
 ```
 
-## Run
+## Usage
 
 From the repository root:
 
@@ -84,14 +86,16 @@ Artifacts are saved under `runs/<model_type>/checkpoints/`:
 - `vocab.pkl` and `labels.pkl` — token and class mappings
 - `embeddings.pkl` — embedding matrix, or `None` for CNN-rand
 
-## Limitations & Review
+### Data & Artifacts
+
+The SNIPS dataset and Google News Word2Vec binary used during the original experiment are not included in this repository. Local machine-specific paths from the coursework submission were removed for portfolio use. See `data/README.md` for the expected directory structure.
+
+## Limitations
 
 This experiment compares freezing, fine-tuning, and combining embeddings under one CNN feature extractor. The multichannel implementation averages embedding outputs; its result should be interpreted according to that architecture.
 
 The reported comparison does not include repeated-run uncertainty or training-cost measurements. The random variant also hardcodes a 30,000-entry, 300-dimensional embedding table; changing vocabulary or embedding settings requires checking that token indices remain in range. Dependency versions are not pinned, and the original data and checkpoints are not bundled.
 
+## Review
+
 The project provided experience with vocabulary construction, pretrained embedding integration, validation-based checkpoint selection, and separate test evaluation. Future work could add repeated seeds, per-intent error analysis, and comparisons with other sentence encoders.
-
-## Notes
-
-The SNIPS dataset and Google News Word2Vec binary used during the original experiment are not included in this repository. Local machine-specific paths from the coursework submission were removed for portfolio use. See `data/README.md` for the expected directory structure.
