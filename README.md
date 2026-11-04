@@ -99,3 +99,10 @@ The reported comparison does not include repeated-run uncertainty or training-co
 ## Review
 
 The project provided experience with vocabulary construction, pretrained embedding integration, validation-based checkpoint selection, and separate test evaluation. Future work could add repeated seeds, per-intent error analysis, and comparisons with other sentence encoders.
+
+## Data and Third-party Resources
+
+- **Data / embeddings:** SNIPS intent examples and Google News pretrained Word2Vec vectors must be obtained separately and used according to their respective source conditions. Neither is bundled with the repository.
+- **Environment:** the configured pretrained embedding path is local; see `data/README.md` for expected inputs.
+
+Dependency lists are in `requirements.txt`; unless versions are explicitly pinned there, they do not reproduce an exact historical software environment. No redistribution permission for third-party inputs is implied by this repository.
