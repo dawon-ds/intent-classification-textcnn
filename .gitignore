@@ -10,3 +10,6 @@ runs/
 *.bin
 data/SNIPS/
 .DS_Store
+.env
+.env.*
+!.env.example
