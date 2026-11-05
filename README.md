@@ -1,5 +1,7 @@
 # Intent Classification with Text CNN
 
+[Portfolio Page](https://app.notion.com/p/3e968564df5a81f4b4b6c0442662376c)
+
 Text CNN experiments for **7-class intent classification on the SNIPS dataset**, comparing different word-embedding strategies under the same CNN architecture.
 
 
