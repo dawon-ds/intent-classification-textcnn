@@ -33,7 +33,8 @@ def main():
 
     model = SentenceCnn(
         len(labels), embeddings, cfg['model_params_cnn']['filter_lengths'],
-        cfg['model_params_cnn']['filter_counts'], cfg['dropout_rate'], cfg['model_type']
+        cfg['model_params_cnn']['filter_counts'], cfg['dropout_rate'], cfg['model_type'],
+        vocab_size=len(vocab)
     ).to(device)
     state = torch.load(ckpt_dir / 'best.pth', map_location=device)
     model.load_state_dict(state['model_state_dict'])
