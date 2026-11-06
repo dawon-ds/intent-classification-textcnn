@@ -30,12 +30,13 @@ class ConvFeatures(nn.Module):
 
 class SentenceCnn(nn.Module):
     def __init__(self, nb_classes, word_embedding_numpy, filter_lengths, filter_counts, dropout_rate,
-                 model_type='non-static'):
+                 model_type='non-static', vocab_size=None):
         super().__init__()
         self.model_type = model_type
 
         if model_type == 'rand':
-            vocab_size = 30000
+            if vocab_size is None or vocab_size <= 0:
+                raise ValueError('vocab_size must be provided for the rand model.')
             word_dimension = 300
             self.word_embedding = nn.Embedding(vocab_size, word_dimension, padding_idx=0)
         else:
