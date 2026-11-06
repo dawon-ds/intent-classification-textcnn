@@ -4,7 +4,6 @@
 
 Text CNN experiments for **7-class intent classification on the SNIPS dataset**, comparing different word-embedding strategies under the same CNN architecture.
 
-
 ## Project Overview
 
 The goal of this project was to examine how the choice of word-embedding strategy affects intent-classification performance. Four variants were evaluated: randomly initialized embeddings, frozen pretrained embeddings, trainable pretrained embeddings, and a combined frozen/trainable embedding variant.
@@ -39,9 +38,6 @@ Pretrained variants use **300-dimensional Word2Vec embeddings**. The experiment 
 | CNN-static | 97.71% |
 | CNN-multichannel | **98.14%** |
 
-![Model comparison](results/model_comparison.svg)
-
-The combined frozen/trainable embedding variant achieved the highest recorded test accuracy in the submitted evaluation report, **1.59 percentage points** above CNN-rand.
 
 ## Repository Structure
 
@@ -53,8 +49,6 @@ intent-classification-textcnn/
 │   └── README.md
 ├── models/
 │   └── sentence_cnn.py
-├── results/
-│   └── model_comparison.svg
 ├── scripts/
 │   ├── train_cnn.py
 │   ├── eval_cnn.py
@@ -93,13 +87,9 @@ The SNIPS dataset and Google News Word2Vec binary used during the original exper
 
 ## Limitations
 
-This experiment compares freezing, fine-tuning, and combining embeddings under one CNN feature extractor. The multichannel implementation averages embedding outputs; its result should be interpreted according to that architecture.
-
-The reported comparison does not include repeated-run uncertainty or training-cost measurements. The random variant also hardcodes a 30,000-entry, 300-dimensional embedding table; changing vocabulary or embedding settings requires checking that token indices remain in range. Dependency versions are not pinned, and the original data and checkpoints are not bundled.
-
-## Review
-
-The project provided experience with vocabulary construction, pretrained embedding integration, validation-based checkpoint selection, and separate test evaluation. Future work could add repeated seeds, per-intent error analysis, and comparisons with other sentence encoders.
+- The multichannel variant averages frozen and trainable embedding outputs before a shared CNN feature extractor rather than using separate convolution paths.
+- The reported results are from the original experiment; repeated-run variability was not evaluated.
+- The original SNIPS data, pretrained Word2Vec vectors, and model checkpoints are not bundled in this repository.
 
 ## Data and Third-party Resources
 
