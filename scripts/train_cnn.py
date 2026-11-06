@@ -65,7 +65,8 @@ def main():
 
     model = SentenceCnn(
         len(labels), embeddings, cfg['model_params_cnn']['filter_lengths'],
-        cfg['model_params_cnn']['filter_counts'], cfg['dropout_rate'], model_type
+        cfg['model_params_cnn']['filter_counts'], cfg['dropout_rate'], model_type,
+        vocab_size=actual_vocab_size
     ).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(
